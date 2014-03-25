@@ -11,6 +11,8 @@ COMMENT=	YAML parser and emitter in C++ matching the YAML 1.2 spec
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
+
 USES=		cmake
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS:BOOL=ON -DYAML_CPP_BUILD_TOOLS=0 -DPREFIX=${PREFIX}
