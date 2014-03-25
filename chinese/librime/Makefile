@@ -20,7 +20,9 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 
 USES=		cmake pkgconfig gettext perl5
 USE_GCC=	4.8+
+MAKE_JOBS_UNSAFE=yes
 USE_PERL5=	build patch
+USE_LDCONFIG=	yes
 LDFLAGS+=	-lintl
 
 PLIST_SUB=	VER=${PORTVERSION}.0
