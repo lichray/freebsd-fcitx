@@ -1,5 +1,5 @@
 --- ./CMakeLists.txt.orig	2013-12-26 17:37:25.000000000 +0900
-+++ ./CMakeLists.txt	2014-03-19 22:41:03.000000000 +0900
++++ ./CMakeLists.txt	2014-03-26 13:02:33.000000000 +0900
 @@ -1,5 +1,5 @@
 -set(CMAKE_USER_MAKE_RULES_OVERRIDE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/c_flag_overrides.cmake)
 -set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX ${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxx_flag_overrides.cmake)
@@ -8,6 +8,48 @@
  
  project(rime)
  cmake_minimum_required(VERSION 2.8)
+@@ -21,6 +21,20 @@
+ 
+ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+ 
++include_directories(${PROJECT_SOURCE_DIR}/include)
++include_directories(${PROJECT_SOURCE_DIR}/thirdparty/include)
++link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib)
++if(MSVC)
++  if(MSVC10)
++    # stdint.h is missing from VS2010
++    include_directories(${PROJECT_SOURCE_DIR}/thirdparty/include/msvc)
++  endif(MSVC10)
++  add_definitions("/wd4244 /wd4996")
++endif(MSVC)
++if(UNIX)
++  add_definitions("-std=c++11")
++endif(UNIX)
++
+ set(Boost_USE_STATIC_LIBS ${BUILD_STATIC})
+ set(Gflags_STATIC ${BUILD_STATIC})
+ set(Glog_STATIC ${BUILD_STATIC})
+@@ -82,20 +96,6 @@
+   message(WARNING "X11/keysym.h not found.")
+ endif(X11Keysym)
+ 
+-include_directories(${PROJECT_SOURCE_DIR}/include)
+-include_directories(${PROJECT_SOURCE_DIR}/thirdparty/include)
+-link_directories(${PROJECT_SOURCE_DIR}/thirdparty/lib)
+-if(MSVC)
+-  if(MSVC10)
+-    # stdint.h is missing from VS2010
+-    include_directories(${PROJECT_SOURCE_DIR}/thirdparty/include/msvc)
+-  endif(MSVC10)
+-  add_definitions("/wd4244 /wd4996")
+-endif(MSVC)
+-if(UNIX)
+-  add_definitions("-std=c++11")
+-endif(UNIX)
+-
+ if(NOT DEFINED LIB_INSTALL_DIR)
+     set(LIB_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/lib)
+ endif()
 @@ -104,7 +104,7 @@
      set(BIN_INSTALL_DIR ${CMAKE_INSTALL_PREFIX}/bin)
  endif()
