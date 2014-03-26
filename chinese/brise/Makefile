@@ -3,7 +3,7 @@
 PORTNAME=	brise
 PORTVERSION=	0.32
 CATEGORIES=	chinese textproc
-MASTER_SITES=	http://github.com/lotem/brise/archive/brise-${BRISE_VER}.tar.gz?dummy=/
+MASTER_SITES=	http://github.com/lotem/brise/archive/brise-${DISTVERSION}.tar.gz?dummy=/
 DISTNAME=	${PORTNAME}-brise-${DISTVERSION}
 
 MAINTAINER=	hiroto.kagotani@gmail.com
