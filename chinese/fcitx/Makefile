@@ -38,7 +38,6 @@ USE_LDCONFIG=	yes
 USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info tar:xz
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
 OPTIONS_DEFAULT=GTK2 QT4
