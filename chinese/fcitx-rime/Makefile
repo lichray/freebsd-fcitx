@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 RUN_DEPENDS=	${LOCALBASE}/share/brise/default.yaml:${PORTSDIR}/chinese/brise
 
 # need? # USE_LDCONFIG=	${PREFIX}/lib/fcitx/
-USES=		cmake gettext tar:xz
+USES=		cmake gettext pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 
 CMAKE_ARGS+=	-DBRISE_DIR=${LOCALBASE}/share/brise
