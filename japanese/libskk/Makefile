@@ -31,6 +31,9 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
+pre-fetch:
+	echo FETCH_ENV == ${FETCH_ENV}
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskk.so.0
 
