@@ -7,7 +7,12 @@ CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fcitx \
-		pinyin.tar.gz:data table.tar.gz:data en_dict-${_DICT_VER}.tar.gz:data
+		en_dict-${_DICT_VER}.tar.gz:data \
+		pinyin.tar.gz:data \
+		py_stroke-${_PYSTROKE_VER}.tar.gz:data \
+		py_table-${_PYTABLE_VER}.tar.gz:data \
+		table.tar.gz:data
+
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -99,12 +104,16 @@ CMAKE_ARGS+=	-DENABLE_DEBUG=ON
 
 DOCS_EXTRA_PATCHES=	${FILESDIR}/nodocs-doc_CMakeLists.txt
 
-_DICT_VER=	20120815
+_DICT_VER=	20121020
+_PYSTROKE_VER=	20121124
+_PYTABLE_VER=	20121124
 
 post-patch:
-	@${CP} ${_DISTDIR}/pinyin.tar.gz ${WRKSRC}/data
-	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/data/table
-	@${CP} ${_DISTDIR}/en_dict-${_DICT_VER}.tar.gz ${WRKSRC}/data
+	@${CP} ${_DISTDIR}/en_dict-${_DICT_VER}.tar.gz ${WRKSRC}/src/module/spell/dict/.
+	@${CP} ${_DISTDIR}/pinyin.tar.gz ${WRKSRC}/src/im/pinyin/data/.
+	@${CP} ${_DISTDIR}/py_stroke-${_PYSTROKE_VER}.tar.gz ${WRKSRC}/src/module/pinyin-enhance/data/.
+	@${CP} ${_DISTDIR}/py_table-${_PYTABLE_VER}.tar.gz ${WRKSRC}/src/module/pinyin-enhance/data/.
+	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/src/im/table/data/.
 .if ${OSVERSION} < 800067
 # getline() is GNU extension which first appeard in FreeBSD 8.0
 EXTRA_PATCHES+=	${FILESDIR}/getline-src_lib_fcitx-utils_utils.c \
