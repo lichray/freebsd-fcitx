@@ -16,8 +16,23 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libskk.so:${PORTSDIR}/japanese/libskk
 
 USES=		cmake gettext pkgconfig tar:xz compiler:c++11-lang
+USE_QT4=	gui
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DSKK_DEFAULT_PATH=${LOCALBASE}/share/skk/SKK-JISYO.L
+
+OPTIONS_DEFINE=	QT4
+OPTIONS_DEFAULT=QT4
+QT4_DESC=	Enable Qt for GUI configuration
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4=	gui
+PLIST_SUB+=	QT4=""
+.else
+CMAKE_ARGS+=	-DENABLE_QT=OFF
+PLIST_SUB+=	 QT4="@comment "
+.endif
 
 .include <bsd.port.mk>
