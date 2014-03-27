@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 USES=		scons gmake iconv pkgconfig tar:xz
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+#LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:
 	@${CP} ${_DISTDIR}/lm_sc.t3g.arpa.tar.bz2 \

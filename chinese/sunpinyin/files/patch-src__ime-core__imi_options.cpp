@@ -1,5 +1,5 @@
 --- ./src/ime-core/imi_options.cpp.orig	2012-05-14 12:55:19.000000000 +0900
-+++ ./src/ime-core/imi_options.cpp	2014-03-27 21:26:34.000000000 +0900
++++ ./src/ime-core/imi_options.cpp	2014-03-27 23:17:44.000000000 +0900
 @@ -73,12 +73,15 @@
  
      if (!m_user_data_dir.size()) {
