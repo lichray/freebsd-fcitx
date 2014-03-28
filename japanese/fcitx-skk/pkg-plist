@@ -18,3 +18,4 @@ share/fcitx/skk/rule
 @dirrmtry share/icons
 @dirrmtry share/fcitx/imicon
 @dirrmtry share/fcitx
+%%QT4%%@dirrmtry lib/fcitx/qt
