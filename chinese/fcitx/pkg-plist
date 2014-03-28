@@ -112,7 +112,7 @@ lib/fcitx/fcitx-xkb.so
 lib/fcitx/fcitx-xkbdbus.so
 lib/fcitx/libexec/comp-spell-dict
 lib/fcitx/libexec/fcitx-po-parser
-lib/fcitx/libexec/fcitx-qt-gui-wrapper
+%%QT4GUI%%lib/fcitx/libexec/fcitx-qt-gui-wrapper
 lib/fcitx/libexec/fcitx-scanner
 %%QT4GUI%%lib/fcitx/qt/libfcitx-quickphrase-editor.so
 lib/girepository-1.0/Fcitx-1.0.typelib
