@@ -34,7 +34,7 @@ CONFLICTS=	zh-scim-fcitx-3.*
 
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/fcitx ${PREFIX}/lib/fcitx/qt
 USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info tar:xz
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}

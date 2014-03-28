@@ -28,6 +28,7 @@ QT4_DESC=	Enable Qt for GUI configuration
 
 .if ${PORT_OPTIONS:MQT4}
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui
+USE_LDCONFIG+=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DENABLE_QT=OFF
