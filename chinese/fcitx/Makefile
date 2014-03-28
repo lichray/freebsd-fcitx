@@ -12,7 +12,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fcitx \
 		py_stroke-${_PYSTROKE_VER}.tar.gz:data \
 		py_table-${_PYTABLE_VER}.tar.gz:data \
 		table.tar.gz:data
-
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -39,12 +38,14 @@ USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
-OPTIONS_DEFAULT=GTK2 QT4
+OPTIONS_DEFINE=	GTK2 GTK3 QT4 QT4GUI OPENCC TPUNC
+#OPTIONS_DEFAULT=GTK2 QT4 QT4GUI
+OPTIONS_DEFAULT=GTK2 QT4GUI
 
 GTK2_DESC=	Enable Gtk2 IM module
 GTK3_DESC=	Enable Gtk3 IM module
 QT4_DESC=	Enable Qt4 IM module
+QT4GUI_DESC=	Enable Qt4-based configuration GUI
 OPENCC_DESC=	Enable OpenCC for Chinese Transform
 TPUNC_DESC=	Use traditional quotation marks
 
@@ -85,6 +86,14 @@ PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DENABLE_QT_IM_MODULE=OFF
 PLIST_SUB+=	QT4="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MQT4GUI}
+USE_QT4GUI=	qmake_build moc_build rcc_build uic_build gui
+PLIST_SUB+=	QT4GUI=""
+.else
+CMAKE_ARGS+=	-DENABLE_QT_GUI=OFF
+PLIST_SUB+=	QT4GUI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENCC}

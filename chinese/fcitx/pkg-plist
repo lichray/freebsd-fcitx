@@ -114,7 +114,7 @@ lib/fcitx/libexec/comp-spell-dict
 lib/fcitx/libexec/fcitx-po-parser
 lib/fcitx/libexec/fcitx-qt-gui-wrapper
 lib/fcitx/libexec/fcitx-scanner
-lib/fcitx/qt/libfcitx-quickphrase-editor.so
+%%QT4GUI%%lib/fcitx/qt/libfcitx-quickphrase-editor.so
 lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
 %%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
@@ -458,7 +458,7 @@ share/mime/packages/x-fskin.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/cmake/fcitx
 @dirrmtry share/cmake
-@dirrm lib/fcitx/qt
+%%QT4GUI%%@dirrm lib/fcitx/qt
 @dirrm lib/fcitx/libexec
 @dirrm lib/fcitx
 @dirrm include/fcitx/module/xkb
