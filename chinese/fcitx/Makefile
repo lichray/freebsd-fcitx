@@ -81,7 +81,7 @@ SUB_LIST+=	GTK3_IM=xim
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_QT4=	qmake_build moc_build rcc_build uic_build dbus gui inputmethods
+USE_QT4+=	qmake_build moc_build rcc_build uic_build dbus gui inputmethods
 PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DENABLE_QT_IM_MODULE=OFF
@@ -89,7 +89,7 @@ PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQT4GUI}
-USE_QT4=	qmake_build moc_build rcc_build uic_build gui
+USE_QT4+=	qmake_build moc_build rcc_build uic_build dbus gui
 PLIST_SUB+=	QT4GUI=""
 .else
 CMAKE_ARGS+=	-DENABLE_QT_GUI=OFF
