@@ -19,12 +19,26 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libpinyin.so:${PORTSDIR}/chinese/libpinyin
 
-USE_LDCONFIG=	${PREFIX}/lib/fcitx/
 USES=		cmake gettext pkgconfig tar:xz
+USE_LDCONFIG=	${PREFIX}/lib/fcitx/
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 _MODEL_VER=	20130308
+
+OPTIONS_DEFINE=	QT4
+OPTIONS_DEFAULT=QT4
+QT4_DESC=	Enable Qt4 for dictmanager
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MQT4}
+USE_QT4=	qmake_build moc_build rcc_build uic_build gui
+PLIST_SUB+=	QT4=""
+.else
+CMAKE_ARGS+=	-DENABLE_QT=OFF
+PLIST_SUB+=	QT4="@comment "
+.endif
 
 post-patch:
 	@${CP} ${_DISTDIR}/model.text.${_MODEL_VER}.tar.gz ${WRKSRC}/data/.
