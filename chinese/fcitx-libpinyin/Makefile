@@ -20,7 +20,6 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libpinyin.so:${PORTSDIR}/chinese/libpinyin
 
 USES=		cmake gettext pkgconfig tar:xz
-USE_LDCONFIG=	${PREFIX}/lib/fcitx
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -34,7 +33,7 @@ QT4_DESC=	Enable Qt4 for dictmanager
 
 .if ${PORT_OPTIONS:MQT4}
 USE_QT4=	qmake_build moc_build rcc_build uic_build gui webkit
-USE_LDCONFIG+=	${PREFIX}/lib/fcitx/qt
+USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT4=""
 .else
 CMAKE_ARGS+=	-DENABLE_QT=OFF
