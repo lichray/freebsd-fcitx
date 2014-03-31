@@ -21,4 +21,8 @@ INSTALLS_ICONS=	yes
 
 PROJECTHOST=	fcitx
 
+.if ${OSVERSION} >= 1000000
+CMAKE_ARGS+=	-DLIBICONV_SECOND_ARGUMENT_IS_CONST=1
+.endif
+
 .include <bsd.port.mk>
