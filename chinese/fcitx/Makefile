@@ -31,19 +31,18 @@ SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
 CONFLICTS=	zh-scim-fcitx-3.*
 
+USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info tar:xz
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
-USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
-USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info tar:xz
+USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
-OPTIONS_DEFINE=	GTK2 GTK3 QT4 QT4GUI OPENCC TPUNC
+OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
 OPTIONS_DEFAULT=GTK2
 
 GTK2_DESC=	Enable Gtk2 IM module
 GTK3_DESC=	Enable Gtk3 IM module
 QT4_DESC=	Enable Qt4 IM module
-QT4GUI_DESC=	Enable Qt4-based configuration GUI
 OPENCC_DESC=	Enable OpenCC for Chinese Transform
 TPUNC_DESC=	Use traditional quotation marks
 
@@ -80,22 +79,11 @@ SUB_LIST+=	GTK3_IM=xim
 
 .if ${PORT_OPTIONS:MQT4}
 USE_QT4+=	qmake_build moc_build rcc_build uic_build dbus gui inputmethods
+USE_LDCONFIG+=	${PREFIX}/lib/fcitx/qt
 PLIST_SUB+=	QT4=""
 .else
-CMAKE_ARGS+=	-DENABLE_QT_IM_MODULE=OFF
+CMAKE_ARGS+=	-DENABLE_QT=OFF -DENABLE_QT_IM_MODULE=OFF -DENABLE_QT_GUI=OFF
 PLIST_SUB+=	QT4="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MQT4GUI}
-USE_QT4+=	qmake_build moc_build rcc_build uic_build dbus gui
-PLIST_SUB+=	QT4GUI=""
-.else
-CMAKE_ARGS+=	-DENABLE_QT_GUI=OFF
-PLIST_SUB+=	QT4GUI="@comment "
-.endif
-
-.if !${PORT_OPTIONS:MQT4} && !${PORT_OPTIONS:MQT4GUI}
-CMAKE_ARGS+=	-DENABLE_QT=OFF
 .endif
 
 .if ${PORT_OPTIONS:MOPENCC}

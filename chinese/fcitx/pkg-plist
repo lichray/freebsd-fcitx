@@ -19,18 +19,18 @@ include/fcitx-gclient/fcitxclient.h
 include/fcitx-gclient/fcitxconnection.h
 include/fcitx-gclient/fcitxinputmethod.h
 include/fcitx-gclient/fcitxkbd.h
-include/fcitx-qt/fcitxqt_export.h
-include/fcitx-qt/fcitxqtconfiguifactory.h
-include/fcitx-qt/fcitxqtconfiguiplugin.h
-include/fcitx-qt/fcitxqtconfiguiwidget.h
-include/fcitx-qt/fcitxqtconnection.h
-include/fcitx-qt/fcitxqtformattedpreedit.h
-include/fcitx-qt/fcitxqtinputcontextproxy.h
-include/fcitx-qt/fcitxqtinputmethoditem.h
-include/fcitx-qt/fcitxqtinputmethodproxy.h
-include/fcitx-qt/fcitxqtkeyboardlayout.h
-include/fcitx-qt/fcitxqtkeyboardproxy.h
-include/fcitx-qt/fcitxqtkeysequencewidget.h
+%%QT4%%include/fcitx-qt/fcitxqt_export.h
+%%QT4%%include/fcitx-qt/fcitxqtconfiguifactory.h
+%%QT4%%include/fcitx-qt/fcitxqtconfiguiplugin.h
+%%QT4%%include/fcitx-qt/fcitxqtconfiguiwidget.h
+%%QT4%%include/fcitx-qt/fcitxqtconnection.h
+%%QT4%%include/fcitx-qt/fcitxqtformattedpreedit.h
+%%QT4%%include/fcitx-qt/fcitxqtinputcontextproxy.h
+%%QT4%%include/fcitx-qt/fcitxqtinputmethoditem.h
+%%QT4%%include/fcitx-qt/fcitxqtinputmethodproxy.h
+%%QT4%%include/fcitx-qt/fcitxqtkeyboardlayout.h
+%%QT4%%include/fcitx-qt/fcitxqtkeyboardproxy.h
+%%QT4%%include/fcitx-qt/fcitxqtkeysequencewidget.h
 include/fcitx-utils/bitset.h
 include/fcitx-utils/desktop-parse.h
 include/fcitx-utils/handler-table.h
@@ -112,9 +112,9 @@ lib/fcitx/fcitx-xkb.so
 lib/fcitx/fcitx-xkbdbus.so
 lib/fcitx/libexec/comp-spell-dict
 lib/fcitx/libexec/fcitx-po-parser
-%%QT4GUI%%lib/fcitx/libexec/fcitx-qt-gui-wrapper
+%%QT4%%lib/fcitx/libexec/fcitx-qt-gui-wrapper
 lib/fcitx/libexec/fcitx-scanner
-%%QT4GUI%%lib/fcitx/qt/libfcitx-quickphrase-editor.so
+%%QT4%%lib/fcitx/qt/libfcitx-quickphrase-editor.so
 lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK2%%lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-fcitx.so
 %%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
@@ -134,15 +134,15 @@ lib/libfcitx-core.so.0.3
 lib/libfcitx-gclient.so
 lib/libfcitx-gclient.so.0
 lib/libfcitx-gclient.so.0.1
-lib/libfcitx-qt.so
-lib/libfcitx-qt.so.0
-lib/libfcitx-qt.so.0.1
+%%QT4%%lib/libfcitx-qt.so
+%%QT4%%lib/libfcitx-qt.so.0
+%%QT4%%lib/libfcitx-qt.so.0.1
 lib/libfcitx-utils.so
 lib/libfcitx-utils.so.0
 lib/libfcitx-utils.so.0.1
 libdata/pkgconfig/fcitx-config.pc
 libdata/pkgconfig/fcitx-gclient.pc
-libdata/pkgconfig/fcitx-qt.pc
+%%QT4%%libdata/pkgconfig/fcitx-qt.pc
 libdata/pkgconfig/fcitx-utils.pc
 libdata/pkgconfig/fcitx.pc
 man/man1/createPYMB.1.gz
@@ -458,7 +458,7 @@ share/mime/packages/x-fskin.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/cmake/fcitx
 @dirrmtry share/cmake
-%%QT4GUI%%@dirrm lib/fcitx/qt
+%%QT4%%@dirrm lib/fcitx/qt
 @dirrm lib/fcitx/libexec
 @dirrm lib/fcitx
 @dirrm include/fcitx/module/xkb
@@ -477,7 +477,7 @@ share/mime/packages/x-fskin.xml
 @dirrm include/fcitx/module/chttrans
 @dirrm include/fcitx/module
 @dirrm include/fcitx-utils
-@dirrm include/fcitx-qt
+%%QT4%%@dirrm include/fcitx-qt
 @dirrm include/fcitx-gclient
 @dirrm include/fcitx-config
 @dirrm include/fcitx
