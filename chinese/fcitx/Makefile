@@ -36,10 +36,9 @@ USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	${PREFIX}/lib/fcitx/qt
 USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info tar:xz
 INSTALLS_ICONS=	yes
-LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 QT4GUI OPENCC TPUNC
-OPTIONS_DEFAULT=GTK2 QT4 QT4GUI
+OPTIONS_DEFAULT=GTK2
 
 GTK2_DESC=	Enable Gtk2 IM module
 GTK3_DESC=	Enable Gtk3 IM module
