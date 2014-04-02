@@ -94,6 +94,10 @@ CMAKE_ARGS+=	-DENABLE_QT_GUI=OFF
 PLIST_SUB+=	QT4GUI="@comment "
 .endif
 
+.if !${PORT_OPTIONS:MQT4} && !${PORT_OPTIONS:MQT4GUI}
+CMAKE_ARGS+=	-DENABLE_QT=OFF
+.endif
+
 .if ${PORT_OPTIONS:MOPENCC}
 LIB_DEPENDS+=	libopencc.so:${PORTSDIR}/chinese/opencc
 .else
