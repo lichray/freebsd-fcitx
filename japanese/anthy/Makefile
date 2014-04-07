@@ -84,11 +84,11 @@ post-patch:
 		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/${ELISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/src-util/*.el ${STAGEDIR}/${PREFIX}/${ELISPDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/src-util/*.el ${STAGEDIR}${PREFIX}/${ELISPDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}/${PREFIX}/${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ELISP ${STAGEDIR}/${PREFIX}/${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ELISP ${STAGEDIR}${PREFIX}/${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
