@@ -2,7 +2,7 @@
 # $FreeBSD: head/japanese/fcitx-anthy/Makefile 327737 2013-09-20 18:47:54Z bapt $
 
 PORTNAME=	fcitx-anthy
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
