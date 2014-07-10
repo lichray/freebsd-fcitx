@@ -2,7 +2,7 @@
 # $FreeBSD: head/chinese/fcitx/Makefile 343214 2014-02-07 11:44:08Z bapt $
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.8.3
+PORTVERSION=	4.2.8.4
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
@@ -16,7 +16,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A Flexible Input Method Framework
+COMMENT=	Flexible Input Method Framework
 
 LICENSE=	GPLv2
 
@@ -31,7 +31,7 @@ SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
 CONFLICTS=	zh-scim-fcitx-3.*
 
-USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info tar:xz
+USES=		tar:xz cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
