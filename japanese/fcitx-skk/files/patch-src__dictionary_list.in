@@ -1,6 +1,0 @@
---- ./src/dictionary_list.in.orig	2013-10-28 01:07:26.000000000 +0900
-+++ ./src/dictionary_list.in	2014-03-20 13:42:45.000000000 +0900
-@@ -1,2 +1,2 @@
--type=file,file=@SKK_DEFAULT_PATH@,mode=readonly
- type=file,file=$FCITX_CONFIG_DIR/skk/user.dict,mode=readwrite
-+type=file,file=@SKK_DEFAULT_PATH@,mode=readonly
