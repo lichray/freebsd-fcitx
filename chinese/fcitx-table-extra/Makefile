@@ -2,7 +2,7 @@
 # $FreeBSD: head/chinese/fcitx-table-extra/Makefile 339153 2014-01-08 16:12:38Z vanilla $
 
 PORTNAME=	fcitx-table-extra
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.7
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
