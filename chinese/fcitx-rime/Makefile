@@ -2,7 +2,7 @@
 # $FreeBSD: head/chinese/fcitx-rime/Makefile 339153 2014-01-08 16:12:38Z vanilla $
 
 PORTNAME=	fcitx-rime
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		librime.so:${PORTSDIR}/chinese/librime
 RUN_DEPENDS=	${LOCALBASE}/share/brise/default.yaml:${PORTSDIR}/chinese/brise
 
-# need? # USE_LDCONFIG=	${PREFIX}/lib/fcitx/
 USES=		cmake gettext pkgconfig tar:xz
 INSTALLS_ICONS=	yes
 
