@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-sunpinyin/Makefile 336173 2013-12-11 14:58:29Z bapt $
+# $FreeBSD: head/chinese/fcitx-sunpinyin/Makefile 365601 2014-08-21 23:07:32Z marino $
 
 PORTNAME=	fcitx-sunpinyin
 PORTVERSION=	0.4.1
@@ -12,14 +12,10 @@ COMMENT=	SunPinyin support for Fcitx
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
-BUILD_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
+		libsunpinyin.so:${PORTSDIR}/chinese/sunpinyin
 
 USES=		cmake gettext pkgconfig tar:xz
 INSTALLS_ICONS=	yes
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

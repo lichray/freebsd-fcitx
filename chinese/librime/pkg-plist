@@ -6,5 +6,3 @@ lib/librime.so.%%VER%%
 lib/librime.so.1
 libdata/pkgconfig/rime.pc
 share/cmake/rime/RimeConfig.cmake
-@dirrm share/cmake/rime
-@dirrmtry share/cmake

@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-googlepinyin/Makefile 339153 2014-01-08 16:12:38Z vanilla $
+# $FreeBSD: head/chinese/fcitx-googlepinyin/Makefile 366259 2014-08-26 19:46:08Z adamw $
 
 PORTNAME=	fcitx-googlepinyin
 PORTVERSION=	0.1.6
@@ -8,21 +8,17 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	fcitx
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A libgooglepinyin support for Fcitx
+COMMENT=	Libgooglepinyin support for Fcitx
 
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libgooglepinyin.so:${PORTSDIR}/chinese/libgooglepinyin
 
-USES=		cmake gettext pkgconfig tar:xz
+USES=		tar:xz cmake gettext pkgconfig iconv
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
 PROJECTHOST=	fcitx
-
-.if ${OSVERSION} >= 1000000
-CMAKE_ARGS+=	-DLIBICONV_SECOND_ARGUMENT_IS_CONST=1
-.endif
 
 .include <bsd.port.mk>

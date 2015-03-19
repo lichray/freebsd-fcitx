@@ -12,4 +12,3 @@ share/locale/ja/LC_MESSAGES/fcitx-hangul.mo
 share/locale/ko/LC_MESSAGES/fcitx-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-hangul.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-hangul.mo
-@dirrm share/fcitx/hangul

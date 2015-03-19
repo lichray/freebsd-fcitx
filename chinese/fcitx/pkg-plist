@@ -123,8 +123,6 @@ lib/girepository-1.0/Fcitx-1.0.typelib
 %%GTK3%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%GTK3%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-3.0 --update-cache
 %%QT4%%lib/qt4/plugins/inputmethods/qtim-fcitx.so
-%%QT4%%@dirrmtry lib/qt4/plugins/inputmethods
-%%QT4%%@dirrmtry lib/qt4/plugins
 lib/libfcitx-config.so
 lib/libfcitx-config.so.4
 lib/libfcitx-config.so.4.1
@@ -441,45 +439,3 @@ share/locale/ko/LC_MESSAGES/fcitx.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx.mo
 share/mime/packages/x-fskin.xml
-@dirrm %%DATADIR%%/table
-@dirrm %%DATADIR%%/spell
-@dirrm %%DATADIR%%/skin/default
-@dirrm %%DATADIR%%/skin/dark
-@dirrm %%DATADIR%%/skin/classic
-@dirrm %%DATADIR%%/skin
-@dirrm %%DATADIR%%/py-enhance
-@dirrm %%DATADIR%%/pinyin
-@dirrm %%DATADIR%%/inputmethod
-@dirrm %%DATADIR%%/imicon
-@dirrm %%DATADIR%%/dbus
-@dirrm %%DATADIR%%/data/quickphrase.d
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/configdesc
-@dirrm %%DATADIR%%/addon
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/cmake/fcitx
-@dirrmtry share/cmake
-%%QT4%%@dirrm lib/fcitx/qt
-@dirrm lib/fcitx/libexec
-@dirrm lib/fcitx
-@dirrm include/fcitx/module/xkb
-@dirrm include/fcitx/module/x11
-@dirrm include/fcitx/module/spell
-@dirrm include/fcitx/module/quickphrase
-@dirrm include/fcitx/module/punc
-@dirrm include/fcitx/module/pinyin-enhance
-@dirrm include/fcitx/module/pinyin
-@dirrm include/fcitx/module/notificationitem
-@dirrm include/fcitx/module/ipc
-@dirrm include/fcitx/module/freedesktop-notify
-@dirrm include/fcitx/module/dbus
-@dirrm include/fcitx/module/clipboard
-@dirrm include/fcitx/module/classicui
-@dirrm include/fcitx/module/chttrans
-@dirrm include/fcitx/module
-@dirrm include/fcitx-utils
-%%QT4%%@dirrm include/fcitx-qt
-@dirrm include/fcitx-gclient
-@dirrm include/fcitx-config
-@dirrm include/fcitx

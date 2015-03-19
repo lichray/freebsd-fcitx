@@ -1,14 +1,14 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/librime/Makefile 343214 2014-02-07 11:44:08Z bapt $
+# $FreeBSD: head/chinese/librime/Makefile 367958 2014-09-11 17:51:14Z amdmi3 $
 
 PORTNAME=	librime
 PORTVERSION=	1.1
 CATEGORIES=	chinese textproc
-MASTER_SITES=	http://github.com/lotem/${PORTNAME}/archive/rime-${PORTVERSION}.tar.gz?dummy=/
+MASTER_SITES=	http://github.com/rime/${PORTNAME}/archive/rime-${PORTVERSION}.tar.gz?dummy=/
 DISTNAME=	${PORTNAME}-rime-${DISTVERSION}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	Rime Input Method Engine
+COMMENT=	Rime Input Method Engine, the core library
 
 LICENSE=	GPLv3
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 USES=		cmake compiler:c++11-lang pkgconfig gettext perl5
 USE_PERL5=	build patch
 USE_LDCONFIG=	yes
+USE_XORG=	xproto
 LDFLAGS+=	-lintl
 
 PLIST_SUB=	VER=${PORTVERSION}.0

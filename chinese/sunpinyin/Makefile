@@ -1,8 +1,9 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/sunpinyin/Makefile 344117 2014-02-13 14:18:58Z miwi $
+# $FreeBSD: head/chinese/sunpinyin/Makefile 365520 2014-08-20 23:36:35Z marino $
 
 PORTNAME=	sunpinyin
 DISTVERSION=	2.0.4rc2
+PORTREVISION=	1
 CATEGORIES=	chinese devel
 MASTER_SITES=	LOCAL/delphij:1 \
 		${MASTER_SITE_GOOGLE_CODE}:1 \
@@ -19,12 +20,17 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
-USES=		scons gmake iconv pkgconfig tar:xz
-USE_LDCONFIG=	yes
 MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
+USE_LDCONFIG=	yes
+USES=		scons gmake iconv pkgconfig tar:xz
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+INSTALL_TARGET=	install --install-sandbox=${STAGEDIR}
 
 post-patch:
 	@${CP} ${_DISTDIR}/lm_sc.t3g.arpa.tar.bz2 \
 		${_DISTDIR}/dict.utf8.tar.bz2 ${WRKSRC}/raw
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsunpinyin.so.3.0
 
 .include <bsd.port.mk>

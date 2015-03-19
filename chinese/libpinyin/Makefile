@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library to deal with pinyin
 
+LICENSE=	GPLv2
+
 USE_BDB=	yes
 USE_GNOME=	glib20
 USES=		gettext gmake libtool pathfix pkgconfig

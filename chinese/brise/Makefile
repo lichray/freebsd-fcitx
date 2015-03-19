@@ -7,7 +7,7 @@ MASTER_SITES=	http://github.com/lotem/brise/archive/brise-${DISTVERSION}.tar.gz?
 DISTNAME=	${PORTNAME}-brise-${DISTVERSION}
 
 MAINTAINER=	hiroto.kagotani@gmail.com
-COMMENT=	The official Rime schema repository
+COMMENT=	Rime Schema Repository
 
 LICENSE=	GPLv3
 

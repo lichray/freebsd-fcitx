@@ -1,5 +1,5 @@
 # Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-# $FreeBSD: head/chinese/fcitx/Makefile 343214 2014-02-07 11:44:08Z bapt $
+# $FreeBSD: head/chinese/fcitx/Makefile 367720 2014-09-09 08:49:00Z marino $
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.8.5
@@ -31,10 +31,10 @@ SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
 CONFLICTS=	zh-scim-fcitx-3.*
 
-USES=		tar:xz cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
+USES=		tar:xz cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
@@ -113,7 +113,7 @@ post-patch:
 	@${CP} ${_DISTDIR}/py_table-${_PYTABLE_VER}.tar.gz ${WRKSRC}/src/module/pinyin-enhance/data/.
 	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/src/im/table/data/.
 .if ${OSVERSION} < 800067
-# getline() is GNU extension which first appeard in FreeBSD 8.0
+# getline() is GNU extension which FreeBSD only recently adopted
 EXTRA_PATCHES+=	${FILESDIR}/getline-src_lib_fcitx-utils_utils.c \
 		${FILESDIR}/getline-src_lib_fcitx-utils_utils.h
 .endif

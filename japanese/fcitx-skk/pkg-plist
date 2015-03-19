@@ -11,11 +11,3 @@ share/fcitx/configdesc/fcitx-skk.desc
 share/fcitx/inputmethod/skk.conf
 share/fcitx/skk/dictionary_list
 share/fcitx/skk/rule
-@dirrm share/fcitx/skk
-@dirrmtry share/icons/hicolor/64x64/apps
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
-@dirrmtry share/fcitx/imicon
-@dirrmtry share/fcitx
-%%QT4%%@dirrmtry lib/fcitx/qt

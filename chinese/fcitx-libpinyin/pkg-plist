@@ -32,6 +32,3 @@ share/locale/de/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/ja/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-libpinyin.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-libpinyin.mo
-@dirrm share/fcitx/libpinyin/zhuyin_data
-@dirrm share/fcitx/libpinyin
-%%QT4%%@dirrmtry lib/fcitx/qt

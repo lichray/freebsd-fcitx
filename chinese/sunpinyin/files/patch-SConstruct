@@ -1,5 +1,5 @@
---- ./SConstruct.orig	2012-07-18 13:25:59.000000000 +0900
-+++ ./SConstruct	2014-03-27 23:29:22.000000000 +0900
+--- SConstruct.orig	2012-07-18 12:25:59.000000000 +0800
++++ SConstruct	2013-09-14 14:44:54.603035259 +0800
 @@ -176,10 +176,12 @@
  
      libln_builder = Builder(action='ln -s ${SOURCE.name} ${TARGET.name}',
@@ -17,21 +17,7 @@
      env.Append(BUILDERS={'InstallAsSymlink': libln_builder})
      return env
  
-@@ -207,9 +209,13 @@
- 
- opts.Save('configure.conf', env)
- 
-+destdir = ARGUMENTS.get('destdir', '')
- libdir = env['LIBDIR']
-+libdestdir = destdir + libdir
- libdatadir = os.path.join(env['LIBDATADIR'], 'sunpinyin/data')
-+libdatadestdir = destdir + libdatadir
- headersdir = os.path.join(env['PREFIX'], 'include/sunpinyin-2.0')
-+headersdestdir = destdir + headersdir
- 
- # pass through environmental variables
- envvar = [('CC', 'CC'),
-@@ -324,7 +330,6 @@
+@@ -324,7 +326,6 @@
      conf.CheckFunc('getopt_long')
      conf.CheckFunc('getpagesize')
      conf.CheckFunc('get_opt')
@@ -39,41 +25,12 @@
      conf.CheckCHeader('inttypes.h')
      conf.CheckCHeader('locale.h')
      conf.CheckCHeader('libintl.h')
-@@ -388,6 +393,7 @@
- if GetOS() != 'Darwin':
-     lib = env.SharedLibrary(libname, SHLIBSUFFIX='', source=imesource,
-                             parse_flags='-Wl,-soname=%s' % libname_soname)
-+    os.system('strip ' + libname)
- else:
-     # TODO: add install_name on Darwin?
-     lib = env.SharedLibrary('sunpinyin', source=imesource)
-@@ -407,9 +413,9 @@
- def DoInstall():
-     lib_target = None
-     if GetOS() == 'Darwin':
--        lib_target = env.Install(libdir, lib)
-+        lib_target = env.Install(libdestdir, lib)
-     else:
--        lib_target_bin = env.Install(libdir, lib)
-+        lib_target_bin = env.Install(libdestdir, lib)
-         # where does it goes
-         install_path = os.path.dirname(str(lib_target_bin[0]))
-         lib_target = [
-@@ -420,14 +426,14 @@
+@@ -420,7 +421,7 @@
                                   lib_target_bin),
              ]
  
 -    lib_pkgconfig_target = env.Install(os.path.join(libdir, 'pkgconfig'),
-+    lib_pkgconfig_target = env.Install(destdir + os.path.join(env['PREFIX'], 'libdata/pkgconfig'),
++    lib_pkgconfig_target = env.Install(os.path.join(env['PREFIX'], 'libdata/pkgconfig'),
                                         ['sunpinyin-2.0.pc'])
--    libdata_target = env.Install(libdatadir,
-+    libdata_target = env.Install(libdatadestdir,
+     libdata_target = env.Install(libdatadir,
                                   ['data/lm_sc.t3g',
-                                   'data/pydict_sc.bin'])
-     header_targets = []
-     for header in headers:
--        header_targets.append(env.InstallAs(headersdir + header[3:], header))
-+        header_targets.append(env.InstallAs(headersdestdir + header[3:], header))
-     env.Alias('install-headers', header_targets)
-     env.Alias('install-lib', lib_target + [lib_pkgconfig_target])
-     env.Alias('install-libdata', libdata_target)

@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/skk/SKK-JISYO.L:${PORTSDIR}/japanese/skk-jisyo
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libskk.so:${PORTSDIR}/japanese/libskk
 
-USES=		cmake gettext pkgconfig tar:xz compiler:c++11-lang
+USES=		tar:xz compiler:c++11-lang cmake gettext pkgconfig
 INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DSKK_DEFAULT_PATH=${LOCALBASE}/share/skk/SKK-JISYO.L
 

@@ -6,4 +6,3 @@ share/locale/de/LC_MESSAGES/fcitx-m17n.mo
 share/locale/ja/LC_MESSAGES/fcitx-m17n.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx-m17n.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-m17n.mo
-@dirrm share/fcitx/m17n

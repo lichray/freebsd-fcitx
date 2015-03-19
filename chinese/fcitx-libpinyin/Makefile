@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-libpinyin/Makefile 339153 2014-01-08 16:12:38Z vanilla $
+# $FreeBSD: head/chinese/fcitx-libpinyin/Makefile 356156 2014-06-01 16:43:03Z ohauer $
 
 PORTNAME=	fcitx-libpinyin
 PORTVERSION=	0.3.1
@@ -12,14 +12,14 @@ DIST_SUBDIR=	fcitx
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	The libpinyin support for Fcitx
+COMMENT=	Libpinyin support for Fcitx
 
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
 		libpinyin.so:${PORTSDIR}/chinese/libpinyin
 
-USES=		cmake gettext pkgconfig tar:xz
+USES=		tar:xz cmake gettext pkgconfig
 INSTALLS_ICONS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
