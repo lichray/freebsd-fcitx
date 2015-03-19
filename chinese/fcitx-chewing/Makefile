@@ -2,7 +2,7 @@
 # $FreeBSD: head/chinese/fcitx-chewing/Makefile 339153 2014-01-08 16:12:38Z vanilla $
 
 PORTNAME=	fcitx-chewing
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
