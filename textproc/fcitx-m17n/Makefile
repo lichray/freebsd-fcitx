@@ -2,7 +2,7 @@
 # $FreeBSD: head/textproc/fcitx-m17n/Makefile 341277 2014-01-26 20:26:27Z mat $
 
 PORTNAME=	fcitx-m17n
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
