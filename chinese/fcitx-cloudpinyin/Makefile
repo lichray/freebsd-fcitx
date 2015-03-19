@@ -2,7 +2,7 @@
 # $FreeBSD: head/chinese/fcitx-cloudpinyin/Makefile 339153 2014-01-08 16:12:38Z vanilla $
 
 PORTNAME=	fcitx-cloudpinyin
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	chinese
 MASTER_SITES=	http://download.fcitx-im.org/${PORTNAME}/
 DIST_SUBDIR=	fcitx
