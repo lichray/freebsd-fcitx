@@ -27,10 +27,6 @@ PLIST_SUB=	VER=${PORTVERSION}.0
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 1000000
-USE_GCC=	4.8+
-.endif
-
 post-patch:     .SILENT
 	${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
 		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' '{}' \;
