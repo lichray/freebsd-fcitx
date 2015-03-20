@@ -21,8 +21,7 @@ COMMENT=	Flexible Input Method Framework
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libdbus-1.so:${PORTSDIR}/devel/dbus \
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libicuuc.so:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -34,10 +33,12 @@ CONFLICTS=	zh-scim-fcitx-3.*
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
-USES=		tar:xz cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info
+USES=		tar:xz cmake desktop-file-utils execinfo gettext iconv \
+		pathfix pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
-OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC
+OPTIONS_DEFINE=	GTK2 GTK3 QT4 OPENCC TPUNC DOCS
 OPTIONS_DEFAULT=GTK2 QT4
 
 GTK2_DESC=	Enable Gtk2 IM module
@@ -100,7 +101,7 @@ EXTRA_PATCHES+=	${FILESDIR}/tpunc-data_punc.mb.zh_CN
 CMAKE_ARGS+=	-DENABLE_DEBUG=ON
 .endif
 
-DOCS_EXTRA_PATCHES=	${FILESDIR}/nodocs-doc_CMakeLists.txt
+DOCS_EXTRA_PATCHES_OFF=	${FILESDIR}/nodocs-doc_CMakeLists.txt
 
 _DICT_VER=	20121020
 _PYSTROKE_VER=	20121124
