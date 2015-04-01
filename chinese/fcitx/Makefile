@@ -2,7 +2,7 @@
 # $FreeBSD: head/chinese/fcitx/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx
-PORTVERSION=	4.2.8.5
+PORTVERSION=	4.2.8.6
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://download.fcitx-im.org/fcitx/:fcitx \
 		http://download.fcitx-im.org/data/:data
