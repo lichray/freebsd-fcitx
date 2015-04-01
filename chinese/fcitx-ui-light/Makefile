@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-ui-light/Makefile 357139 2014-06-09 11:21:52Z olgeni $
+# $FreeBSD: head/chinese/fcitx-ui-light/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-ui-light
 PORTVERSION=	0.1.3

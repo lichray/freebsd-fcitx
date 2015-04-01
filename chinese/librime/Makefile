@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/librime/Makefile 367958 2014-09-11 17:51:14Z amdmi3 $
+# $FreeBSD: head/chinese/librime/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	librime
 PORTVERSION=	1.1

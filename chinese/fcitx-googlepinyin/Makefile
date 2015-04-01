@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-googlepinyin/Makefile 366259 2014-08-26 19:46:08Z adamw $
+# $FreeBSD: head/chinese/fcitx-googlepinyin/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-googlepinyin
 PORTVERSION=	0.1.6

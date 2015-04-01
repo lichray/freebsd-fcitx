@@ -1,5 +1,5 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
-# $FreeBSD: head/korean/fcitx-hangul/Makefile 360424 2014-07-03 17:33:14Z amdmi3 $
+# $FreeBSD: head/korean/fcitx-hangul/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-hangul
 PORTVERSION=	0.3.0

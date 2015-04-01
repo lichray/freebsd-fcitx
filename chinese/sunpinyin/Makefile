@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/sunpinyin/Makefile 365520 2014-08-20 23:36:35Z marino $
+# $FreeBSD: head/chinese/sunpinyin/Makefile 381998 2015-03-23 14:05:49Z bdrewery $
 
 PORTNAME=	sunpinyin
 DISTVERSION=	2.0.4rc2
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
-USES=		scons gmake iconv pkgconfig tar:xz
+USES=		gmake scons iconv pkgconfig tar:xz
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 INSTALL_TARGET=	install --install-sandbox=${STAGEDIR}
 

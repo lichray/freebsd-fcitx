@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-configtool/Makefile 375505 2014-12-25 01:26:27Z bapt $
+# $FreeBSD: head/chinese/fcitx-configtool/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-configtool
 PORTVERSION=	0.4.8

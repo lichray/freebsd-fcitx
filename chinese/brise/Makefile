@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/chinese/brise/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	brise
 PORTVERSION=	0.32

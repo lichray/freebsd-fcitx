@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/libgooglepinyin/Makefile 357139 2014-06-09 11:21:52Z olgeni $
+# $FreeBSD: head/chinese/libgooglepinyin/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	libgooglepinyin
 PORTVERSION=	0.1.2

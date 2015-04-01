@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/japanese/fcitx-anthy/Makefile 374303 2014-12-08 16:48:38Z tijl $
+# $FreeBSD: head/japanese/fcitx-anthy/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-anthy
 PORTVERSION=	0.2.1

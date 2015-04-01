@@ -1,5 +1,5 @@
 # Created by: Zhihao Yuan <lichray@gmail.com>
-# $FreeBSD: head/chinese/fcitx-libpinyin/Makefile 356156 2014-06-01 16:43:03Z ohauer $
+# $FreeBSD: head/chinese/fcitx-libpinyin/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-libpinyin
 PORTVERSION=	0.3.1

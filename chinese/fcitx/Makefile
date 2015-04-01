@@ -1,5 +1,5 @@
 # Created by: Shen Chuan-Hsing <statue@freebsd.sinica.edu.tw>
-# $FreeBSD: head/chinese/fcitx/Makefile 367720 2014-09-09 08:49:00Z marino $
+# $FreeBSD: head/chinese/fcitx/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx
 PORTVERSION=	4.2.8.5

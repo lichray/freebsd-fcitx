@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/japanese/fcitx-skk/Makefile 382798 2015-03-31 07:08:00Z delphij $
 
 PORTNAME=	fcitx-skk
 PORTVERSION=	0.1.1
